@@ -3,3 +3,6 @@ $dellCommand = $addremovelist | ForEach-Object {Get-ItemProperty $_.PSPath} | Wh
 if ($dellCommand){
     return $dellCommand.DisplayVersion
 }
+else {
+    return "Dell Command Update not found!"
+}
