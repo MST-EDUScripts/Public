@@ -12,20 +12,22 @@ param (
 $addremovelist = Get-ChildItem -Path HKLM:\SOFTWARE\Microsoft\windows\CurrentVersion\Uninstall
 $dellCommand = $addremovelist | ForEach-Object {Get-ItemProperty $_.PSPath} | Where-Object DisplayName -like "Dell Command*"
 
+
 if ($Version){
+    if (Test-Path -Path "C:\Program Files (x86)\Dell\CommandUpdate\dcu-cli.exe"){
+        return "Customize"
+    }
     if ($dellCommand){
         $dellCommandVersion = [version]$dellCommand.DisplayVersion
         if (($dellCommandVersion.Major -eq 3) -and ($dellCommandVersion.minor -lt 1)){
             return "Update"
-        }
-        if (($dellCommandVersion.Major -eq 3) -and ($dellCommandVersion.Minor -eq 1)){
-            return "Customize"
         }
     }
     else {
         return "Install"
     }
 }
+
 if ($Uninstall){
     return $dellCommand.UninstallString
 }
