@@ -9,6 +9,6 @@ IF [%ProductKey%]==[] (
 echo No key present
 ) ELSE (
 echo Installing %ProductKey%
-slmgr /ipk %ProductKey%
-slmgr /ato
+cscript //B C:\Windows\System32\slmgr.vbs /ipk %ProductKey%
+cscript //B C:\Windows\System32\slmgr.vbs /ato
 )
