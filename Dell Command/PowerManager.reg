@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Dell\CommandPowerManager]
+"DoNotRemove"="Null"
+"TMSettingsGroup"="True"
+"TMPolicyVersion"="1.0.0"
+"TMMode"=dword:00000002
+"TMModeBalanced"=dword:00000000
+"TMModeCool"=dword:00000000
+"TMModeQuiet"=dword:00000000
+"TMModeUltra"=dword:00000000
+
