@@ -3,4 +3,4 @@ $downloadURL = "https://dl.dell.com/FOLDER05695265M/3/$download"
 
 Invoke-WebRequest -Uri $downloadURL -OutFile "$PSScriptRoot\$download"
 Start-Process -FilePath "$PSScriptRoot\$download" -ArgumentList "/s" -Wait
-Start-Process REG -ArgumentList "IMPORT "$PSScriptRoot\PowerManagerCool.reg""
+Start-Process REG -ArgumentList "IMPORT $PSScriptRoot\PowerManagerCool.reg"
