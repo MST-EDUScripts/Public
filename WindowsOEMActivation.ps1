@@ -1,8 +1,9 @@
 $productKey = (Get-WmiObject -Class SoftwareLicensingService).OA3xOriginalProductKey
 
 if ($productKey){
-    & cscript //B C:\windows\system32\slmgr.vbs /ipk $productKey
-    & cscript //B C:\windows\system32\slmgr.vbs /ato
+    # Uncomment the below two lines to have the script also attempt to activate Windows.
+    # & cscript //B C:\windows\system32\slmgr.vbs /ipk $productKey
+    # & cscript //B C:\windows\system32\slmgr.vbs /ato  
     return $productKey
 }
 else {
